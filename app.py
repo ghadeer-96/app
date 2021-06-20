@@ -25,8 +25,8 @@ def predict():
        'Dishwasher', 'HardwoodFloor', 'CentralHeat', 'FitnessCenter',
        'Storage', 'BusinessCenter', 'Elevator', 'DryCleaningService',
        'InUnitLaundry', 'AssignedParking', 'Carpet', 'Furnished',
-       'SwimmingPool', 'OnsiteManagement', 'Balcony', 'Ceiling Fan',
-       'Controlled Access', 'GarageParking', 'HighCeilings', 'OutdoorSpace',
+       'SwimmingPool', 'OnsiteManagement', 'Balcony', 'CeilingFan',
+       'ControlledAccess', 'GarageParking', 'HighCeilings', 'OutdoorSpace',
        'WalkInCloset']   
     input = []
     # Extract the input
