@@ -3,6 +3,14 @@ import pickle
 import pandas as pd
 import numpy as np
 
+from sklearn.ensemble import GradientBoostingRegressor,RandomForestRegressor
+
+from sklearn.linear_model import LinearRegression,ElasticNet,Ridge, Lasso
+from sklearn.neighbors import KNeighborsRegressor
+
+from sklearn.model_selection import  GridSearchCV, KFold,RandomizedSearchCV
+
+
 
 # Use pickle to load in the pre-trained model
 model = pickle.load(open(f'models/RandForest.sav', 'rb'))
@@ -40,7 +48,7 @@ def predict():
     #data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
-    prediction = model.predict(final)#[0]
+    prediction = model.predict(final)
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(final.size))
     return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
