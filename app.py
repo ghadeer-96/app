@@ -18,21 +18,23 @@ app = flask.Flask(__name__, template_folder='templates')
        'Walk In Closet']
 
 # Set up the main route
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])#, 'POST'])
 def main():
     if flask.request.method == 'GET':
         # Just render the initial form, to get input
         return(flask.render_template('home.html'))
+
+@app.route('/predict',methods=['POST'])
+def predict():
+    #if flask.request.method == 'POST':
+    # Extract the input
+    int_features = [x for x in flask.request.form.values()]
+    final = np.array(int_features)
+    data_unseen = pd.DataFrame([final], columns = cols)
+    # Get the model's prediction
+    prediction = model.predict(input_variables)[0]
     
-    if flask.request.method == 'POST':
-        # Extract the input
-        int_features = [x for x in flask.request.form.values()]
-        final = np.array(int_features)
-        data_unseen = pd.DataFrame([final], columns = cols)
-        # Get the model's prediction
-        prediction = model.predict(input_variables)[0]
-        
-        return flask.render_template('home.html',pred='Expected rental price will be {}'.format(prediction))
+    return flask.render_template('home.html',pred='Expected rental price will be {}'.format(prediction))
 
     
 ##################################
