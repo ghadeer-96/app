@@ -9,7 +9,7 @@ model = pickle.load(open(f'models/RandForest.sav', 'rb'))
 # Initialise the Flask app
 app = flask.Flask(__name__, template_folder='templates')
 
-['bedrooms', 'baths', 'On Site Laundry', 'Air Conditioning',
+cols = ['bedrooms', 'baths', 'On Site Laundry', 'Air Conditioning',
        'Dishwasher', 'Hardwood Floor', 'Central Heat', 'Fitness Center',
        'Storage', 'Business Center', 'Elevator', 'Dry Cleaning Service',
        'In Unit Laundry', 'Assigned Parking', 'Carpet', 'Furnished',
