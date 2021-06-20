@@ -1,6 +1,7 @@
 import flask
 import pickle
 import pandas as pd
+import numpy as np
 
 
 # Use pickle to load in the pre-trained model
@@ -35,11 +36,11 @@ def predict():
     
     
     final = np.array(input)
-    #final = final.astype('int')
-    #data_unseen = pd.DataFrame([final], columns = cols)
+    final = final.astype('int')
+    data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
-    #prediction = model.predict(data_unseen)[0]
+    prediction = model.predict(data_unseen)[0]
     return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(final.size))
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
