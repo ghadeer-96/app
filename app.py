@@ -2,8 +2,7 @@ import flask
 import pickle
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
+
 
 # Use pickle to load in the pre-trained model
 model = pickle.load(open(f'models/RandForest.sav', 'rb'))
@@ -41,14 +40,7 @@ def predict():
     #data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
-    
-    pipeline = Pipeline([
-            ('std_scalar', StandardScaler())
-        ])
-
-    # standardize input   
-    final = pipeline.transform(final)
-    prediction = model.predict(final)[0]
+    prediction = model.predict(final)#[0]
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(final.size))
     return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
