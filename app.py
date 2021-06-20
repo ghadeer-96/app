@@ -10,13 +10,13 @@ model = pickle.load(open(f'models/RandForest.sav', 'rb'))
 # Initialise the Flask app
 app = flask.Flask(__name__, template_folder='templates')
 
-cols = ['bedrooms', 'baths', 'On Site Laundry', 'Air Conditioning',
-       'Dishwasher', 'Hardwood Floor', 'Central Heat', 'Fitness Center',
-       'Storage', 'Business Center', 'Elevator', 'Dry Cleaning Service',
-       'In Unit Laundry', 'Assigned Parking', 'Carpet', 'Furnished',
-       'Swimming Pool', 'Onsite Management', 'Balcony', 'Ceiling Fan',
-       'Controlled Access', 'Garage Parking', 'High Ceilings', 'Outdoor Space',
-       'Walk In Closet']
+cols = ['bedrooms', 'baths', 'OnSiteLaundry', 'AirConditioning',
+       'Dishwasher', 'HardwoodFloor', 'CentralHeat', 'FitnessCenter',
+       'Storage', 'BusinessCenter', 'Elevator', 'DryCleaningService',
+       'InUnitLaundry', 'AssignedParking', 'Carpet', 'Furnished',
+       'SwimmingPool', 'OnsiteManagement', 'Balcony', 'Ceiling Fan',
+       'Controlled Access', 'Garage Parking', 'HighCeilings', 'OutdoorSpace',
+       'WalkInCloset']
 
 # Set up the main route
 @app.route('/', methods=['GET'])#, 'POST'])
