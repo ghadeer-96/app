@@ -27,17 +27,19 @@ def main():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    #if flask.request.method == 'POST':
+    input = []
     # Extract the input
-    input = flask.request.form['bedrooms']
+    for i in cols:
+       input.append(flask.request.form[i])
+    
     #int_features = [x for x in flask.request.form.values()]
-    #final = np.array(int_features)
-    #final = final.astype('int')
-    #data_unseen = pd.DataFrame([final], columns = cols)
+    final = np.array(input)
+    final = final.astype('int')
+    data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
     #prediction = model.predict(data_unseen)[0]
-    return flask.render_template('home.html',result='Expected rental price will be {} $'.format(input))
+    return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(input))
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
     
