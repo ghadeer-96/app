@@ -41,12 +41,12 @@ def predict():
        input.append(flask.request.form[i])
     
     
-    final = np.array(input)
+    final = np.array([input])
     final = final.astype('int')
     #data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
-    prediction = model.predict(final)
+    prediction = model.predict(final)[0]
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(final.size))
     return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
