@@ -2,13 +2,11 @@ import flask
 import pickle
 import pandas as pd
 import numpy as np
-
-from sklearn.ensemble import GradientBoostingRegressor,RandomForestRegressor
-
-from sklearn.linear_model import LinearRegression,ElasticNet,Ridge, Lasso
-from sklearn.neighbors import KNeighborsRegressor
-
-from sklearn.model_selection import  GridSearchCV, KFold,RandomizedSearchCV
+import sklearn
+#from sklearn.ensemble import GradientBoostingRegressor,RandomForestRegressor
+#from sklearn.linear_model import LinearRegression,ElasticNet,Ridge, Lasso
+#from sklearn.neighbors import KNeighborsRegressor
+#from sklearn.model_selection import  GridSearchCV, KFold,RandomizedSearchCV
 
 
 
