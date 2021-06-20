@@ -32,12 +32,12 @@ def predict():
     int_features = [x for x in flask.request.form.values()]
     final = np.array(int_features)
     final = final.astype('int')
-    data_unseen = pd.DataFrame([final], columns = cols)
+    #data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
-    prediction = int(prediction.Label[0])
+    ##prediction = int(prediction.Label[0])
     #prediction = model.predict(data_unseen)[0]
-    
-    return flask.render_template('home.html',pred='Expected rental price will be {}'.format(prediction))
+    return flask.render_template('home.html',result='Expected rental price will be$')
+    #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
     
 
