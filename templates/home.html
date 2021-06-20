@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Insurance Bill</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Insurance Bill</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+	
+
+	
+  
+    	<input type="text" name="bedrooms" placeholder="bedrooms" required="required" /><br>
+        <input type="text" name="baths" placeholder="baths" required="required" /><br>
+        <input type="text" name="On Site Laundry" placeholder="On Site Laundry" required="required" /><br>
+        <input type="text" name="Air Conditioning" placeholder="Air Conditioning" required="required" /><br>
+        <input type="text" name="Dishwasher" placeholder="Dishwasher" required="required" /><br>
+		
+    	<input type="text" name="Hardwood Floor" placeholder="Hardwood Floor" required="required" /><br>
+        <input type="text" name="Central Heat" placeholder="Central Heat" required="required" /><br>
+        <input type="text" name="Fitness Center" placeholder="Fitness Center" required="required" /><br>
+        <input type="text" name="Storage" placeholder="Storage" required="required" /><br>
+        <input type="text" name="Business Center" placeholder="Business Center" required="required" /><br>
+		
+		<input type="text" name="Elevator" placeholder="Elevator" required="required" /><br>
+        <input type="text" name="Dry Cleaning Service" placeholder="Dry Cleaning Service" required="required" /><br>
+        <input type="text" name="In Unit Laundry" placeholder="In Unit Laundry" required="required" /><br>
+        <input type="text" name="Assigned Parking" placeholder="Assigned Parking" required="required" /><br>
+        <input type="text" name="Swimming Pool" placeholder="Swimming Pool" required="required" /><br>
+
+    	<input type="text" name="Onsite Management" placeholder="Onsite Management" required="required" /><br>
+        <input type="text" name="Balcony" placeholder="Balcony" required="required" /><br>
+        <input type="text" name="Ceiling Fan" placeholder="Ceiling Fan" required="required" /><br>
+        <input type="text" name="Controlled Access" placeholder="Controlled Access" required="required" /><br>
+		
+        <input type="text" name="Garage Parking" placeholder="Garage Parking" required="required" /><br>
+    	<input type="text" name="High Ceilings" placeholder="High Ceilings" required="required" /><br>
+        <input type="text" name="Outdoor Space" placeholder="Outdoor Space" required="required" /><br>
+        <input type="text" name="Walk In Closet" placeholder="Walk In Closet" required="required" /><br>
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
