@@ -10,13 +10,7 @@ model = pickle.load(open(f'models/RandForest.sav', 'rb'))
 # Initialise the Flask app
 app = flask.Flask(__name__, template_folder='templates')
 
-cols = ['bedrooms', 'baths', 'OnSiteLaundry', 'AirConditioning',
-       'Dishwasher', 'HardwoodFloor', 'CentralHeat', 'FitnessCenter',
-       'Storage', 'BusinessCenter', 'Elevator', 'DryCleaningService',
-       'InUnitLaundry', 'AssignedParking', 'Carpet', 'Furnished',
-       'SwimmingPool', 'OnsiteManagement', 'Balcony', 'Ceiling Fan',
-       'Controlled Access', 'Garage Parking', 'HighCeilings', 'OutdoorSpace',
-       'WalkInCloset']
+
 
 # Set up the main route
 @app.route('/', methods=['GET'])#, 'POST'])
@@ -27,6 +21,13 @@ def main():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    cols = ['bedrooms', 'baths', 'OnSiteLaundry', 'AirConditioning',
+       'Dishwasher', 'HardwoodFloor', 'CentralHeat', 'FitnessCenter',
+       'Storage', 'BusinessCenter', 'Elevator', 'DryCleaningService',
+       'InUnitLaundry', 'AssignedParking', 'Carpet', 'Furnished',
+       'SwimmingPool', 'OnsiteManagement', 'Balcony', 'Ceiling Fan',
+       'Controlled Access', 'GarageParking', 'HighCeilings', 'OutdoorSpace',
+       'WalkInCloset']   
     input = []
     # Extract the input
     for i in cols:
