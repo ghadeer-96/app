@@ -48,7 +48,6 @@ def predict():
     ##prediction = int(prediction.Label[0])
     prediction = dict()
     for model in ["models/Elastic.sav", "models/KNR.sav", "models/Lasso.sav", "models/LinReg.sav", "models/RandForest.sav", "models/Ridge.sav", "models/GrandBoost.sav" ]:
-        print(model)
         loaded_model = pickle.load(open(model, 'rb'))
         prediction[model]=loaded_model.predict(final)[0]
     
