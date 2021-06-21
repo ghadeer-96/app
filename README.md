@@ -6,5 +6,6 @@ build frontend, with Heroku as a cloud platform as a service (PaaS) which suppor
 app.py : the python file to deal with backend and requests and make predictions.
 templates and static : contain HTML/CSS code to render the GUI of the web application.
 requirement.txt : contains all dependancies and required libraries.
+models : contains all trained models.
 link to the application:
 https://prediction-app-deploy.herokuapp.com 
