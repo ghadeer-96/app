@@ -46,7 +46,13 @@ def predict():
     #data_unseen = pd.DataFrame([final], columns = cols)
     # Get the model's prediction
     ##prediction = int(prediction.Label[0])
-    prediction = model.predict(final)[0]
+    prediction = dict()
+    for model in ["models/Elastic.sav", "models/KNR.sav", "models/Lasso.sav", "models/LinReg.sav", "models/RandForest.sav", "models/Ridge.sav", "models/GrandBoost.sav" ]:
+        print(model)
+        loaded_model = pickle.load(open(model, 'rb'))
+        prediction[model]=loaded_model.predict(final)[0]
+    
+    #prediction = model.predict(final)[0]
     #return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(final.size))
     return flask.render_template('home.html',pred='Expected rental price will be {} $'.format(prediction))
 
